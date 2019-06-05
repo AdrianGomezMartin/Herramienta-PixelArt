@@ -1,30 +1,26 @@
 package model;
 
 import java.awt.Color;
-import java.io.Serializable;
-import java.util.Arrays;
 
 
-import javax.swing.JButton;
 
-public class Cuadrado extends JButton implements Serializable{
+public class Cuadrado {
 
-	private static final long serialVersionUID = 1L;
 	private String nombre;
 	private int posX, posY;
-	private float[] rgb = new float[3];
 	private Color color;
-	
+
 	public Cuadrado() {
 		super();
 	}
 
-	public Cuadrado(String nombre, int posX, int posY, float[] rgb) {
+
+	public Cuadrado(String nombre, int posX, int posY, Color color) {
 		super();
 		this.nombre = nombre;
 		this.posX = posX;
 		this.posY = posY;
-		this.rgb = rgb;
+		this.color = color;
 	}
 
 	public String getNombre() {
@@ -51,13 +47,7 @@ public class Cuadrado extends JButton implements Serializable{
 		this.posY = posY;
 	}
 
-	public float[] getRgb() {
-		return rgb;
-	}
 
-	public void setRgb(float[] rgb) {
-		this.rgb = rgb;
-	}
 	public Color getColor() {
 		return color;
 	}
@@ -65,9 +55,12 @@ public class Cuadrado extends JButton implements Serializable{
 	public void setColor(Color color) {
 		this.color = color;
 	}
+
+
 	@Override
 	public String toString() {
-		return "Cuadrado [nombre=" + nombre + ", posX=" + posX + ", posY=" + posY + ", rgb=" + Arrays.toString(rgb)
-				+ "]\n";
+		return "Cuadrado [nombre=" + nombre + ", posX=" + posX + ", posY=" + posY + ", color=" + color + "]";
 	}
+
+
 }
